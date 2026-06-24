@@ -1106,6 +1106,23 @@
   }
   .footer-note strong { color: var(--teal); }
 
+  /* ===== IMPRESE (vincitori di tappa) ===== */
+  .imprese-wrap { margin-top: 26px; }
+  .imprese-head { display:flex; align-items:baseline; gap:10px; margin:0 2px 16px; flex-wrap:wrap; }
+  .imprese-head > span:first-child { font-size:15px; font-weight:800; letter-spacing:2.5px; color:var(--grey-light); }
+  .imprese-sub { font-size:12px; color:var(--grey); letter-spacing:.5px; }
+  .imp-event { margin-bottom:20px; }
+  .imp-event-name { font-size:13px; font-weight:700; color:#F2F6FF; opacity:.85; margin:0 2px 12px; }
+  .imp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:18px 10px; }
+  .imp-card { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; }
+  .imp-shield { width:62px; height:73px; filter:drop-shadow(0 3px 5px rgba(0,0,0,.35)); }
+  .imp-title { font-size:12px; font-weight:700; color:#F2F6FF; line-height:1.2; max-width:150px; }
+  .imp-km { font-size:10.5px; font-weight:700; letter-spacing:.4px; background:rgba(255,255,255,.06); padding:2px 9px; border-radius:20px; display:inline-block; }
+  .imp-winner { font-size:12px; font-weight:600; color:var(--grey-light); max-width:150px; }
+  .footer-credit { margin-top:12px; font-size:10.5px; letter-spacing:.3px; color:rgba(199,205,224,.45); }
+  .footer-credit a { color:inherit; text-decoration:none; border-bottom:1px solid rgba(199,205,224,.22); }
+  .footer-credit a:hover { color:var(--grey-light); }
+
   /* ===== MOBILE: TABELLE → CARD STACK ===== */
   @media (max-width: 720px) {
     .desktop-table { display: none; }
@@ -1264,7 +1281,7 @@
   .pc-pts .l { font-size:9px; font-weight:800; letter-spacing:1.2px; color:var(--grey-light); text-transform:uppercase; line-height:1.2; }
   .pc-body { display:flex; align-items:center; gap:6px; padding:20px 22px 10px; position:relative; z-index:1; }
   .pc-radar { flex-shrink:0; display:flex; justify-content:center; align-items:center; }
-  .pc-attrs { flex:1; display:flex; flex-direction:column; gap:15px; min-width:0; }
+  .pc-attrs { flex:1; display:flex; flex-direction:column; gap:24px; min-width:0; }
   .pc-attr { display:flex; align-items:center; gap:9px; }
   .pc-attr .val { font-size:17px; font-weight:900; width:26px; text-align:right; color:var(--green); letter-spacing:-0.5px; }
   .pc-attr .meta { flex:1; min-width:0; }
@@ -1274,6 +1291,20 @@
   .pc-foot { text-align:center; padding:22px 0 22px; position:relative; z-index:1; }
   .pc-foot .tag { font-size:9.5px; font-weight:800; letter-spacing:2px; color:var(--grey); text-transform:uppercase; }
   .pc-foot .ig { font-size:10.5px; color:var(--grey-light); margin-top:4px; }
+  .pc-imprese { padding:9px 16px 0; position:relative; z-index:1; }
+  .pc-imprese .pc-imprese-row { display:flex; justify-content:center; align-items:flex-start; flex-wrap:wrap; gap:8px; }
+  .pc-imp { background:none; border:none; padding:0; margin:0; cursor:pointer; display:block; line-height:0; }
+  .pc-imprese .imp-shield { width:40px; height:40px; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.5)) drop-shadow(0 0 1.5px rgba(0,0,0,0.35)); }
+  .pc-imp-info { margin:11px auto 0; max-width:84%; text-align:center; background:rgba(0,0,0,0.32); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:8px 12px; }
+  .pc-imp-info .pc-imp-t { font-size:12px; font-weight:800; color:var(--white); line-height:1.2; }
+  .pc-imp-info .pc-imp-s { font-size:9px; font-weight:700; letter-spacing:0.5px; color:var(--grey); text-transform:uppercase; margin-top:3px; }
+  .pc-imp-info .pc-imp-p { font-size:11.5px; font-weight:800; margin-top:5px; }
+  .atr-pcard-inner.has-imprese .pc-brand { padding-top:16px; }
+  .atr-pcard-inner.has-imprese .pc-name { padding-top:4px; }
+  .atr-pcard-inner.has-imprese .pc-rank { padding:9px 0 2px; }
+  .atr-pcard-inner.has-imprese .pc-pts { margin-top:9px; }
+  .atr-pcard-inner.has-imprese .pc-body { padding-top:12px; padding-bottom:10px; }
+  .atr-pcard-inner.has-imprese .pc-foot { padding:12px 0 14px; }
   .pc-share-btn {
     width:340px; max-width:100%; padding:15px; border:none; border-radius:13px; cursor:pointer;
     font-family:'Figtree',sans-serif; font-size:14.5px; font-weight:800; letter-spacing:0.3px; color:#fff;
@@ -1442,6 +1473,7 @@
     <a href="https://www.instagram.com/abruzzotrailrunseries/" target="_blank" rel="noopener" class="footer-ig">
       <span class="ig-glyph"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span> Seguici su Instagram · @abruzzotrailrunseries
     </a>
+    <div class="footer-credit">Sviluppo &amp; grafiche · <a href="mailto:997creations@gmail.com">997creations@gmail.com</a> · rev4 · 24/06/2026</div>
   </footer>
 </div>
 
@@ -2313,6 +2345,20 @@ function renderRanking() {
     listEl.addEventListener('click', (e) => {
       // Il pulsante "Condividi" non deve chiudere/collassare la card
       if (e.target.closest('.pc-share-btn')) return;
+      // Click su uno stemma impresa: mostra titolo+potere, NON chiude la card
+      const __imp = e.target.closest('.pc-imp');
+      if (__imp) {
+        const wrap = __imp.closest('.pc-imprese');
+        const info = wrap ? wrap.querySelector('.pc-imp-info') : null;
+        if (info) {
+          if (!info.hidden && info.dataset.cur === __imp.dataset.t) { info.hidden = true; info.dataset.cur = ''; }
+          else {
+            info.innerHTML = '<div class="pc-imp-t">'+__imp.dataset.t+'</div><div class="pc-imp-s">'+__imp.dataset.s+'</div><div class="pc-imp-p" style="color:'+__imp.dataset.c+'">'+__imp.dataset.p+'</div>';
+            info.hidden = false; info.dataset.cur = __imp.dataset.t;
+          }
+        }
+        return;
+      }
       // Desktop: click su una riga atleta
       const row = e.target.closest('tr.athlete-main');
       if (row) { toggleDetail(row); return; }
@@ -2322,7 +2368,7 @@ function renderRanking() {
         const cell = card.querySelector('[data-detail-cell]');
         if (cell && !cell.dataset.filled) {
           const a = athletesByKey[cell.getAttribute('data-detail-cell')];
-          if (a) { cell.innerHTML = renderDetailGrid(a); cell.dataset.filled = '1'; }
+          if (a) { cell.innerHTML = renderDetailGrid(a); cell.dataset.filled = '1'; prepImpresaShields(cell); }
         }
         card.classList.toggle('expanded');
       }
@@ -2488,8 +2534,8 @@ function normalizedOverall(a) {
 // Punti (overall normalizzato), Competitività, Costanza, Caratura, Partecipazione.
 function radarPentagonSVG(values) {
   const labels = ['PUNTI', 'COMPET.', 'COSTANZA', 'CARATURA', 'PARTEC.'];
-  const SIZE = 90, cx = SIZE/2, cy = SIZE/2, R = 26;
-  const PAD = 26; // spazio extra ai lati per non tagliare le etichette
+  const SIZE = 90, cx = SIZE/2, cy = SIZE/2, R = 33;
+  const PAD = 18; // spazio extra ai lati per non tagliare le etichette
   const VB = SIZE + PAD*2;
   const pt = (i, frac) => { const ang = (-90 + i*72) * Math.PI/180; return [cx + PAD + R*frac*Math.cos(ang), cy + PAD + R*frac*Math.sin(ang)]; };
   const poly = frac => 'M ' + [0,1,2,3,4].map(i => { const [x,y] = pt(i, frac); return x.toFixed(1)+','+y.toFixed(1); }).join(' L ') + ' Z';
@@ -2499,13 +2545,28 @@ function radarPentagonSVG(values) {
   const vpath = 'M ' + vp.map(([x,y]) => x.toFixed(1)+','+y.toFixed(1)).join(' L ') + ' Z';
   let dots = ''; vp.forEach(([x,y]) => dots += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2" fill="#2BD66A"/>`);
   let labs = ''; labels.forEach((lb,i) => { const [x,y] = pt(i,1.5); labs += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" fill="#7A86B0" font-size="5" font-weight="800" font-family="Figtree" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.3">${lb}</text>`; });
-  return `<svg width="${VB*1.25}" height="${VB*1.25}" viewBox="0 0 ${VB} ${VB}">
+  return `<svg width="${VB*1.42}" height="${VB*1.42}" viewBox="0 0 ${VB} ${VB}">
     <defs><linearGradient id="rgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2BD66A"/><stop offset="1" stop-color="#4CD7D0"/></linearGradient>
     <filter id="rglow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
     ${grid}${axes}
     <path d="${vpath}" fill="url(#rgrad)" fill-opacity="0.25" stroke="url(#rgrad)" stroke-width="2" filter="url(#rglow)"/>
     ${dots}${labs}
   </svg>`;
+}
+
+function athleteImprese(a) {
+  const out = [];
+  EVENTS.forEach(function(ev){
+    ev.races.forEach(function(r){
+      if(!raceData[r.id]) return;
+      const w = impRaceWinners(r.id);
+      ['M','F'].forEach(function(g){
+        const row = w[g];
+        if(row && athleteKey(row) === a.key){ out.push({eventId:ev.id, km:r.km, gender:g, eventName:ev.name}); }
+      });
+    });
+  });
+  return out;
 }
 
 function renderAthleteCardBlock(a) {
@@ -2521,10 +2582,16 @@ function renderAthleteCardBlock(a) {
   ];
   // valori del pentagono: overall normalizzato + i 4 attributi
   const radarVals = [normalizedOverall(a), stats.competitivita, stats.costanza, stats.caratura, stats.partecipazione];
+  const __impList = athleteImprese(a);
+  const impreseHtml = __impList.length ? '<div class="pc-imprese"><div class="pc-imprese-row">'+__impList.map(function(im){
+      var t=IMP_TITLE[im.eventId][im.gender], pw=IMP_POWER[im.eventId], c=impresaColor(im.km)[0];
+      var sub=im.eventName+' \u00B7 '+impFmtKm(im.km)+' km';
+      return '<button type="button" class="pc-imp" data-t="'+t+'" data-s="'+sub+'" data-p="'+pw+'" data-c="'+c+'">'+buildImpresaShield(im.eventId, im.km).replace('<svg ', '<svg preserveAspectRatio="none" ')+'</button>';
+    }).join('')+'</div><div class="pc-imp-info" hidden></div></div>' : '';
   return `
     <div class="ac-card-shell">
       <div class="atr-pcard" id="${cardId}">
-        <div class="atr-pcard-inner">
+        <div class="atr-pcard-inner${__impList.length ? ' has-imprese' : ''}">
           <div class="pc-gender ${a.gender || 'M'}">${a.gender || 'M'}</div>
           <div class="pc-brand">
             <div class="pc-logo-wrap"><img src="${LOGO_IMG}" alt="ATR"></div>
@@ -2543,6 +2610,7 @@ function renderAthleteCardBlock(a) {
             <span class="v">${a.totalPoints}</span>
             <span class="l">Punti<br>ATR Series</span>
           </div>
+          ${impreseHtml}
           <div class="pc-body">
             <div class="pc-radar">${radarPentagonSVG(radarVals)}</div>
             <div class="pc-attrs">
@@ -2584,6 +2652,24 @@ function toggleDetail(row) {
   tr.className = 'detail-row';
   tr.innerHTML = `<td colspan="8">${renderDetailGrid(a)}</td>`;
   row.parentNode.insertBefore(tr, row.nextElementSibling);
+  prepImpresaShields(tr);
+}
+
+// Pre-rasterizza gli scudi SVG in immagini, così l'export su canvas resta sincrono (mobile share)
+function prepImpresaShields(scope){
+  if(!scope) return;
+  scope.querySelectorAll('.imp-shield').forEach(function(svg){
+    if(svg.__img) return;
+    try{
+      var clone = svg.cloneNode(true);
+      clone.setAttribute('width','256'); clone.setAttribute('height','304');
+      var xml = new XMLSerializer().serializeToString(clone);
+      var url = 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(xml);
+      var img = new Image();
+      img.onload = function(){ svg.__img = img; };
+      img.src = url;
+    }catch(e){}
+  });
 }
 
 // ====== GENERAZIONE IMMAGINE CARD (formato storia 1080x1920) ======
@@ -2598,6 +2684,8 @@ async function shareAthleteCard(athleteKeyStr, displayName) {
   // Riferimento alla card REALE già renderizzata nel DOM: la ridisegniamo in scala 1:1
   const cardEl = document.getElementById('card_' + a.key.replace(/[^a-zA-Z0-9]/g, '_'));
   if (!cardEl) return;
+  // l'eventuale riquadro "significato" è solo interazione live: non deve entrare nell'export
+  cardEl.querySelectorAll('.pc-imp-info').forEach(function(el){ el.hidden = true; });
 
   // Niente await qui: il font è già caricato (la card è visibile con Figtree) e
   // un await prima di navigator.share farebbe scadere l'attivazione utente su mobile.
@@ -2765,7 +2853,7 @@ async function shareAthleteCard(athleteKeyStr, displayName) {
   const radarSvg = cardEl.querySelector('.pc-radar svg');
   if (radarSvg) {
     const rr = rel(radarSvg);
-    const R = rr.w * (26 / 142); // raggio relativo al viewBox dell'SVG
+    const R = rr.w * (33 / 126); // raggio relativo al viewBox dell'SVG
     const vals = [normalizedOverall(a), stats.competitivita, stats.costanza, stats.caratura, stats.partecipazione];
     drawRadar(ctx, rr.x + rr.w / 2, rr.y + rr.h / 2, R, vals);
   }
@@ -2803,6 +2891,20 @@ async function shareAthleteCard(athleteKeyStr, displayName) {
   if (tagEl) drawText(tagEl, { align: 'center' });
   const igEl = cardEl.querySelector('.pc-foot .ig');
   if (igEl) drawText(igEl, { align: 'center' });
+
+  // ===================== IMPRESE (scudi con ombra perimetrale) =====================
+  cardEl.querySelectorAll('.imp-shield').forEach(function(svg){
+    const r = rel(svg);
+    const img = svg.__img;
+    if (img && img.complete && img.naturalWidth) {
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.45)';
+      ctx.shadowBlur = 5 * S;
+      ctx.shadowOffsetY = 2 * S;
+      ctx.drawImage(img, r.x, r.y, r.w, r.h);
+      ctx.restore();
+    }
+  });
 
   // ===================== ESPORTA =====================
   // Conversione SINCRONA (nessun await prima di navigator.share): così su mobile
@@ -2844,7 +2946,7 @@ function roundRect(ctx, x, y, w, h, r) {
 function drawRadar(ctx, cx, cy, R, values) {
   const labels = ['PUNTI', 'COMPET.', 'COSTANZA', 'CARATURA', 'PARTEC.'];
   const pt = (i, frac) => { const ang = (-90 + i * 72) * Math.PI / 180; return [cx + R * frac * Math.cos(ang), cy + R * frac * Math.sin(ang)]; };
-  const sw = R / 26; // 1 unità di stroke nel viewBox SVG (R=26)
+  const sw = R / 33; // 1 unità di stroke nel viewBox SVG (R=33)
   // gabbia + assi
   ctx.strokeStyle = 'rgba(255,255,255,0.10)'; ctx.lineWidth = sw;
   [0.25, 0.5, 0.75, 1].forEach(f => {
@@ -2867,9 +2969,9 @@ function drawRadar(ctx, cx, cy, R, values) {
   ctx.fillStyle = '#2BD66A';
   vp.forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 2 * sw, 0, Math.PI * 2); ctx.fill(); });
   // etichette (SVG: frac 1.5, font 5 su R=26, letter-spacing 0.3)
-  ctx.fillStyle = '#7A86B0'; ctx.font = `800 ${R * 5 / 26}px Figtree, sans-serif`;
+  ctx.fillStyle = '#7A86B0'; ctx.font = `800 ${R * 5 / 33}px Figtree, sans-serif`;
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-  try { ctx.letterSpacing = (R * 0.3 / 26) + 'px'; } catch (e) {}
+  try { ctx.letterSpacing = (R * 0.3 / 33) + 'px'; } catch (e) {}
   labels.forEach((lb, i) => { const [x, y] = pt(i, 1.5); ctx.fillText(lb, x, y); });
   try { ctx.letterSpacing = '0px'; } catch (e) {}
   ctx.textBaseline = 'alphabetic';
@@ -2914,6 +3016,95 @@ document.addEventListener('click', (e) => {
 }, true);
 
 // ---------- PANEL VINCITORI ----------
+/* ============ IMPRESE - vincitori di tappa (rev4) ============ */
+const IMP_EMB = {
+  voltigno:{svg:`<rect x="17.5" y="31" width="5" height="7" rx="1" fill="#7A4A22"/><path d="M20 3 L27 15 H23.5 L29.5 23 H25.5 L32 31 H8 L14.5 23 H10.5 L16.5 15 H13 Z" fill="#3BE07F"/><path d="M20 3 L13 15 H16.5 L10.5 23 H14.5 L8 31 H20 Z" fill="#26B863"/>`, sc:1.25, tx:7, ty:5},
+  alba:{svg:`<g transform="translate(21,20) rotate(34)"><path d="M0 -19 L1.5 -16 L1.5 2 L0 4 L-1.5 2 L-1.5 -16 Z" fill="#C6D0E0"/><path d="M0 -19 L1.5 -16 L1.5 2 L0 3 Z" fill="#9AA6BC"/><rect x="-3.4" y="3.6" width="6.8" height="2.3" rx="1.1" fill="#E6B53C"/><rect x="-1" y="5.9" width="2" height="4.8" rx="1" fill="#8A5A2B"/><circle cx="0" cy="11.2" r="1.8" fill="#E6B53C"/></g><g transform="translate(0.5,1.8) scale(0.9)"><path d="M22 11 C25 12 26 17 23 21 L20.8 18 C23 16 23 13 22 11 Z" fill="#E24B4A"/><path d="M10 10.5 C11 5 15 3.6 19 4.8 C21.2 5.5 22.2 8 22 10.3 C20 9.2 17 9.2 15 10.2 C13 10.8 11 10.8 10 10.5 Z" fill="#E24B4A"/><path d="M9 21 C9 13 12.5 9.6 16 9.6 C19.6 9.6 22 13 22 18 L22 21 Z" fill="#E6B53C"/><path d="M9 20.4 L22 20.4 L22 21.6 L9 21.6 Z" fill="#C9952A"/><path d="M22 18 L25 19 L24 23 L20.6 22 Z" fill="#C9952A"/><path d="M9.6 21.6 L9.6 27 L13 26 L13 21.6 Z" fill="#C9952A"/><path d="M9 21 L5.8 22 L9 18.4 Z" fill="#C9952A"/><circle cx="13.5" cy="15.5" r="1.1" fill="#9C7A2A"/></g>`, sc:1.32, tx:11, ty:10},
+  mammut:{svg:`<path d="M9 24 C6.8 18 7.6 9.8 13.4 7.4 C15.8 6.4 17.2 8 17.6 10 C19 8.2 21.8 8 25 9.8 C30.5 12.6 34.5 16.2 32.6 23.5 L32 24 Z" fill="#8A5A3A"/><g fill="#774B2F"><rect x="11" y="22" width="4.6" height="10.5" rx="1.6"/><rect x="17.5" y="22.6" width="4.6" height="10" rx="1.6"/><rect x="24" y="22" width="4.6" height="10.5" rx="1.6"/><rect x="29.4" y="21.6" width="4.2" height="10.5" rx="1.6"/></g><path d="M9.5 23.5 L33 23.5 L31.4 26.3 L29.8 24.2 L27.9 26.6 L26 24.2 L24 26.6 L22 24.2 L20 26.6 L18 24.2 L16 26.6 L14 24.2 L12 26.2 Z" fill="#774B2F"/><path d="M8.6 18.4 C5 20.4 3.5 25.2 6 28.6 C7.1 30.1 9.1 29.4 8.8 27.6 C7.9 24.6 8.5 21.1 12 18.9 Z" fill="#8A5A3A"/><path d="M10.8 24 C7 25.4 3.6 26.4 2.6 24.4 C2.2 23.5 1.4 24.2 1.8 25.2 C2.6 27.2 5.2 27 7.2 26 C5.6 27.2 4.4 29 5 30.6 C5.3 31.4 6.2 31.1 6.2 30.2 C6.2 28.2 8 26.4 10.6 25 Z" fill="#F0E7D2"/><path d="M15.2 11.4 C18.2 10.4 20.2 12.4 19 15.7 C16.6 14.5 15.2 12.9 14.6 11.7 Z" fill="#6E3F28"/><circle cx="11.6" cy="15.2" r="1" fill="#2a1a10"/>`, sc:1.2, tx:9, ty:6},
+  xterra:{svg:`<path d="M11.5 14.5 C8.5 11.5 8 16 10.2 18.5 C11.7 19.9 13.3 18.9 13.6 16.9 Z" fill="#B5874E"/><path d="M28.5 14.5 C31.5 11.5 32 16 29.8 18.5 C28.3 19.9 26.7 18.9 26.4 16.9 Z" fill="#B5874E"/><g fill="none" stroke="#241B12" stroke-width="2.5" stroke-linecap="round"><path d="M17 11 C16.1 6.8 15.9 4.2 16.6 2.6 C17.2 1.2 14.8 0.8 14 2.6"/><path d="M23 11 C23.9 6.8 24.1 4.2 23.4 2.6 C22.8 1.2 25.2 0.8 26 2.6"/></g><path d="M13.6 13.8 C13.6 10.6 16.4 9 20 9 C23.6 9 26.4 10.6 26.4 13.8 C26.4 19 25 23.8 22.9 27.6 C22.1 29.2 21.1 30 20 30 C18.9 30 17.9 29.2 17.1 27.6 C15 23.8 13.6 19 13.6 13.8 Z" fill="#ECE2D0"/><path d="M14.2 13.4 C15 10.7 17.2 9.4 20 9.4 C22.8 9.4 25 10.7 25.8 13.4 C23 12.3 17 12.3 14.2 13.4 Z" fill="#C49A60"/><path d="M16.5 12.8 C16.8 17 17.6 21.5 18.6 25.6 L20 25.6 C19.2 20.8 18.7 16.6 18.4 12.5 C17.8 12.5 17.1 12.6 16.5 12.8 Z" fill="#43321F"/><path d="M23.5 12.8 C23.2 17 22.4 21.5 21.4 25.6 L20 25.6 C20.8 20.8 21.3 16.6 21.6 12.5 C22.2 12.5 22.9 12.6 23.5 12.8 Z" fill="#43321F"/><circle cx="17.5" cy="16.5" r="1.35" fill="#0d0805"/><circle cx="22.5" cy="16.5" r="1.35" fill="#0d0805"/><path d="M17.9 26.4 C17.9 29.4 22.1 29.4 22.1 26.4 C22.1 25 20 24.6 20 24.6 C20 24.6 17.9 25 17.9 26.4 Z" fill="#2b1d13"/>`, sc:1.16, tx:9, ty:11},
+  gransasso:{svg:`<path d="M3 34 L11 24 L15 27 L22 11 L27 19 L31 15 L37 34 Z" fill="#8A95AB"/><path d="M22 11 L15 27 L11 24 L3 34 L22 34 Z" fill="#6B7790"/><path d="M19.6 16 L22 11 L24.4 16 L22.6 14.8 L21.4 16 Z" fill="#FFFFFF"/><path d="M29.6 17 L31 15 L32.4 17 L31 16.2 Z" fill="#FFFFFF"/>`, sc:1.22, tx:7, ty:4},
+  maglio:{svg:`<path d="M11 13 Q8 6 13 4 Q12 9 16 8 Q15 2 20 1 Q19 8 23 7 Q23 3 26 5 Q26 10 24 13 Z" fill="#FFB13C"/><path d="M14 12 Q12 7 15 5 Q15 9 18 8 Q18 4 20 4 Q20 9 22 9 Q22 11 21 13 Z" fill="#FFF0A8"/><rect x="18" y="15" width="4.4" height="21" rx="1.6" fill="#9C5A2A"/><rect x="18" y="15" width="1.7" height="21" rx="0.8" fill="#76421E"/><path d="M10 11 H22 L28 14 L28 16 L22 19 H10 Z" fill="#D2DBEA"/><path d="M10 11 H22 L28 14 L27.5 14.6 L22 12.2 H10 Z" fill="#F0F4FB"/><rect x="10" y="17" width="12" height="2" fill="#9AA6BC"/>`, sc:1.22, tx:8, ty:7},
+};
+const IMP_TITLE = {
+  voltigno:{M:'Custode del Voltigno', F:'Custode del Voltigno'},
+  alba:{M:'Guerriero Marsicano', F:'Guerriera Marsicana'},
+  mammut:{M:'Spirito del Mammut', F:'Spirito del Mammut'},
+  xterra:{M:'Ramingo degli Altipiani', F:'Raminga degli Altipiani'},
+  gransasso:{M:'Re del Gran Sasso', F:'Regina del Gran Sasso'},
+  maglio:{M:'Figlio della Forgia Marsicana', F:'Figlia della Forgia Marsicana'},
+};
+const IMPRESA_P = "M32 4 C20 4 11 5.5 8 6.5 C6.5 7 6 8 6 10 L6 38 C6 56 18 67 32 72 C46 67 58 56 58 38 L58 10 C58 8 57.5 7 56 6.5 C53 5.5 44 4 32 4 Z";
+const IMP_POWER = {
+  voltigno:'Istinto del Bosco Antico', alba:'Furia dei Marsi', mammut:'Forza Primordiale',
+  xterra:'Passo Selvaggio', gransasso:'Anima della Montagna Madre', maglio:'Fuoco della Forgia'
+};
+function impresaColor(km){
+  if(km<=13) return ['#2BD66A','#178A44'];
+  if(km<=22) return ['#4CD7D0','#1F938C'];
+  if(km<=34) return ['#A78BFA','#6C4FD0'];
+  return ['#FF6B6B','#B53E3E'];
+}
+function impFmtKm(km){ return Number.isInteger(km) ? String(km) : String(km).replace('.', ','); }
+let __impUid = 0;
+function buildImpresaShield(eventId, km){
+  const e = IMP_EMB[eventId];
+  const c = impresaColor(km), al=c[0], ad=c[1];
+  const uid = 'i'+(__impUid++);
+  const P = IMPRESA_P;
+  const white = e.svg.replace(/(fill|stroke)="[^"]*"/g, '$1="#FFFFFF"');
+  return '<svg viewBox="0 0 64 76" class="imp-shield" xmlns="http://www.w3.org/2000/svg"><defs>'
+    + '<linearGradient id="bg'+uid+'" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="'+al+'"/><stop offset="1" stop-color="'+ad+'"/></linearGradient>'
+    + '<linearGradient id="bev'+uid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.30"/><stop offset="0.42" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.32"/></linearGradient>'
+    + '<linearGradient id="gls'+uid+'" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.40" stop-color="#fff" stop-opacity="0.14"/><stop offset="0.62" stop-color="#fff" stop-opacity="0.32"/><stop offset="0.71" stop-color="#fff" stop-opacity="0.40"/><stop offset="0.77" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+    + '<linearGradient id="frm'+uid+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#C8D4E6"/></linearGradient>'
+    + '<clipPath id="clp'+uid+'"><path d="'+P+'"/></clipPath>'
+    + '<filter id="glow'+uid+'" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="0" stdDeviation="1.7" flood-color="#eaf2ff" flood-opacity="0.95"/></filter>'
+    + '</defs>'
+    + '<path d="'+P+'" fill="url(#bg'+uid+')"/>'
+    + '<g clip-path="url(#clp'+uid+')"><rect x="0" y="0" width="64" height="76" fill="url(#bev'+uid+')"/>'
+    + '<g transform="translate(-3,0) skewX(-12)"><rect x="0" y="-12" width="42" height="100" fill="url(#gls'+uid+')"/></g>'
+    + '<g transform="translate('+e.tx+','+e.ty+') scale('+e.sc+')"><g stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">'+white+'</g>'+e.svg+'</g>'
+    + '</g>'
+    + '<path d="'+P+'" fill="none" stroke="url(#frm'+uid+')" stroke-width="2.6" filter="url(#glow'+uid+')"/>'
+    + '<path d="'+P+'" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-opacity="0.85"/>'
+    + '</svg>';
+}
+function impRaceWinners(raceId){
+  const rows = raceData[raceId]; if(!rows) return {M:null,F:null};
+  const sorted = rows.slice().sort((a,b)=>(Number(a.ranking)||9999)-(Number(b.ranking)||9999));
+  let M=null,F=null;
+  for(let i=0;i<sorted.length;i++){ const r=sorted[i]; const g=(r.gender==='F')?'F':'M'; if(g==='M'&&!M)M=r; if(g==='F'&&!F)F=r; if(M&&F)break; }
+  return {M,F};
+}
+function renderImprese(){
+  let blocks='';
+  EVENTS.forEach(function(ev){
+    const done = ev.races.filter(function(r){ return raceData[r.id]; });
+    if(done.length===0) return;
+    let cards='';
+    done.forEach(function(r){
+      const w=impRaceWinners(r.id);
+      const al=impresaColor(r.km)[0];
+      [['M',w.M],['F',w.F]].forEach(function(gw){
+        const g=gw[0], row=gw[1];
+        if(!row) return;
+        const title=IMP_TITLE[ev.id][g];
+        const gl = (g==='M') ? '1\u00B0 Maschile' : '1\u00AA Femminile';
+        const name = (row.familyName+' '+row.firstName).trim();
+        cards += '<div class="imp-card">'+buildImpresaShield(ev.id, r.km)
+          + '<div class="imp-title">'+title+'</div>'
+          + '<div class="imp-km" style="color:'+al+'">'+impFmtKm(r.km)+' KM \u00B7 '+gl+'</div>'
+          + '<div class="imp-winner">'+name+'</div></div>';
+      });
+    });
+    if(!cards) return;
+    blocks += '<div class="imp-event"><div class="imp-event-name">'+ev.name+'</div><div class="imp-grid">'+cards+'</div></div>';
+  });
+  if(!blocks) return '';
+  return '<div class="imprese-wrap"><div class="imprese-head"><span>IMPRESE</span><span class="imprese-sub">Vincitori di tappa \u00B7 1\u00B0 uomo e 1\u00AA donna</span></div>'+blocks
+    + '<div class="footer-note">Ogni gara assegna <strong>due imprese</strong>: al 1\u00B0 uomo e alla 1\u00AA donna. L\u2019emblema identifica l\u2019evento, il colore la distanza. Le imprese si sbloccano al termine di ogni gara.</div></div>';
+}
+
 function renderWinners() {
   const container = document.getElementById('winnersContent');
   if (Object.keys(raceData).length === 0) {
@@ -2940,6 +3131,7 @@ function renderWinners() {
     <div class="footer-note">
       <strong>Criterio premi:</strong> primi 5 maschili e prime 5 femminili che abbiano completato <strong>almeno 4 delle 6 gare</strong>. Spareggio: miglior punteggio singolo → numero gare → miglior piazzamento.
     </div>
+    ${renderImprese()}
   `;
 }
 
