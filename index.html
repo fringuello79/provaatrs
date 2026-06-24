@@ -2481,7 +2481,7 @@ function renderDetailGrid(a) {
 function computeAthleteStats(a) {
   const races = Object.values(a.results);
   const n = races.length;
-  if (n < 2) return null;
+  if (n < 1) return null;
 
   const pcts = races.map(r => {
     const tot = r.catTotal || r.ranking || 1;
@@ -2493,7 +2493,7 @@ function computeAthleteStats(a) {
 
   const competitivita = clamp(99 * (1 - mean(pcts)));
   const sd = pstdev(pcts);
-  const costanza = clamp(99 * (1 - Math.min(sd * 3, 1)));
+  const costanza = (n < 2) ? competitivita : clamp(99 * (1 - Math.min(sd * 3, 1)));
   const caras = races.map(r => {
     const tot = r.catTotal || 1;
     const sizeFactor = Math.min(Math.log(tot + 1) / Math.log(160), 1);
